@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<div class="">
+    <h2 class="text-center">All Leagues</h2>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center">
+            {% for league in leagues %}
+            <a href="/leagues/{{league.id}}" class="list-group-item">{{league.name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">Baseball Leagues</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center">
+            {% for baseball in baseballs %}
+            <a href="/leagues/{{baseball.id}}" class="list-group-item">{{baseball.name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">Womens Leagues</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center">
+            {% for wleague in wleagues %}
+            <a href="/leagues/{{wleague.id}}" class="list-group-item">{{wleague.name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">Any kind of Hockey Leagues</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center">
+            {% for anyHockey in anyHockeys %}
+            <a href="/leagues/{{anyHockey.id}}" class="list-group-item">{{anyHockey.name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Leagues except Football</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for noFootball in noFootballs %}
+            <a href="/leagues/{{noFootball.id}}" class="list-group-item">{{noFootball.name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Leagues named Conferences</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for conference in conferences %}
+            <a href="/leagues/{{conference.id}}" class="list-group-item">{{conference.name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

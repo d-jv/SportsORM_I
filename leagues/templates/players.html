@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<div class="">
+    <h2 class="text-center">All Players</h2>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered">
+            {% for player in players %}
+            <a href="/players/{{player.id}}" class="list-group-item">{{player.first_name}} {{player.last_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All players with last name = 'Cooper'</h3>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for cooper in coopers %}
+            <a href="/players/{{cooper.id}}" class="list-group-item">{{cooper.first_name}} {{cooper.last_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All players with first name = 'Joshua'</h3>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for joshua in joshuas %}
+            <a href="/players/{{joshua.id}}" class="list-group-item">{{joshua.first_name}} {{joshua.last_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All players with last name = 'Cooper' EXCEPT whose with 'Joshua' as first name.</h3>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for coopNotJ in coopNotJs %}
+            <a href="/players/{{coopNotJ.id}}" class="list-group-item">{{coopNotJ.first_name}} {{coopNotJ.last_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All players with first name = 'Alexander' or first name = 'Wyatt'.</h3>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for alexWyatt in alexWyatts %}
+            <a href="/players/{{alexWyatt.id}}" class="list-group-item">{{alexWyatt.first_name}} {{alexWyatt.last_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

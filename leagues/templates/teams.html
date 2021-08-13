@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<div class="">
+    <h2 class="text-center">All Teams</h2>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered">
+            {% for team in teams %}
+            <a href="/teams/{{team.id}}" class="list-group-item justify-content-center">{{team.location}} {{team.team_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Teams with HQ in Dallas</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for hqDalla in hqDallas %}
+            <a href="/teams/{{hqDalla.id}}" class="list-group-item">{{hqDalla.location}} {{hqDalla.team_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Teams with "City" in his locations name</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for cityLoc in cityLocs %}
+            <a href="/teams/{{cityLoc.id}}" class="list-group-item">{{cityLoc.location}} {{cityLoc.team_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Teams whose names starts with letter "T"</h3>
+    <div class="container-fluid">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered justify-content-center mb-2">
+            {% for tTeam in tTeams %}
+            <a href="/teams/{{tTeam.id}}" class="list-group-item">{{tTeam.location}} {{tTeam.team_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Teams order by location asc</h3>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered mb-2">
+            {% for ascLoc in ascLocs %}
+            <a href="/teams/{{ascLoc.id}}" class="list-group-item">{{ascLoc.location}} {{ascLoc.team_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <h3 class="text-center mt-4">All Teams order by Team Name desc</h3>
+    <div class="container-fluid overflow-auto">
+        <ul class="list-group list-group-horizontal-xl list-group-numbered mb-2">
+            {% for descTName in descTNames %}
+            <a href="/teams/{{descTName.id}}" class="list-group-item">{{descTName.location}} {{descTName.team_name}}</a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
